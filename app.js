@@ -30,6 +30,7 @@ const jobs = require("./routes/jobs");
 const auth = require("./routes/auth");
 
 app.use("/api/v1", jobs);
+app.use("/api/v1", auth);
 
 // Handle unhandled routes
 app.all("*", (req, res, next) => {
