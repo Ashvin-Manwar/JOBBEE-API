@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 
 const dotenv = require("dotenv");
+const cookieParser = require("cookie-parser");
 
 const connectDatabase = require("./config/database");
 
@@ -24,6 +25,9 @@ connectDatabase();
 
 //Setting up body parser
 app.use(express.json());
+
+//Set cookie parser
+app.use(cookieParser());
 
 //Importing all routes
 const jobs = require("./routes/jobs");
