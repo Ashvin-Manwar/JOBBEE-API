@@ -10,6 +10,8 @@ const mongoSanitize = require('express-mongo-sanitize');
 const xssClean = require('xss-clean');
 const hpp = require('hpp');
 const cors = require('cors');
+const bodyParser=require('body-parser')
+
 
 const connectDatabase = require('./config/database');
 
@@ -29,6 +31,11 @@ process.on('uncaughtException', (err) => {
 
 //connecting to database
 connectDatabase();
+
+//setup bodyparser
+app.use(bodyParser.urlencoded({extended:true}))
+app.use(express.static('public'))
+
 // Setup security headers
 app.use(helmet());
 
