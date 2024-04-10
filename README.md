@@ -1,4 +1,4 @@
-# Jobster API
+# JOBBEE-API
 Backend Restful Api for jobs built on Node.js using Express.js $& mongoDB
 
 ## For all routes-info & to know how it works visit-
